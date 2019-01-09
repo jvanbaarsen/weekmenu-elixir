@@ -1,8 +1,22 @@
-<div class="flex w-full justify-center flex-wrap">
-  <div class="bg-white w-1/4 shadow rounded m-3">
-    <%# <img src="<%= asset_pack_path 'images/no-food-image.svg' %1>" class="w-full h-32 bg-orange-lightest" /> %>
+<div class="flex w-full justify-center items-center flex-col">
+  <div class="bg-white w-1/3 shadow rounded m-3 border-t border-orange hover:bg-orange-lightest hover:cursor-pointer">
     <div class="p-8">
-      <h2 class="text-lg">bla</h2>
+      <h2 class="text-lg">Winterstamppot met paddenstoelen en pittige kaas</h2>
+      <small>blauwaderkaas, paddenstoelen, palmkool of snijbiet</small>
+    </div>
+  </div>
+
+  <div class="bg-white w-1/3 shadow rounded m-3 border-t border-orange hover:bg-orange-lightest hover:cursor-pointer">
+    <div class="p-8">
+      <h2 class="text-lg">Gele rijst met ras el hanout saus, kippendijenfilet en yoghurt</h2>
+      <small>ras el hanout, rijst, kippendij, paprika, aubergine</small>
+    </div>
+  </div>
+
+  <div class="bg-white w-1/3 shadow rounded m-3 border-t border-orange hover:bg-orange-lightest hover:cursor-pointer">
+    <div class="p-8">
+      <h2 class="text-lg">Courgettesoep op de wijze van oma</h2>
+      <small>courgette, soep</small>
     </div>
   </div>
 </div>

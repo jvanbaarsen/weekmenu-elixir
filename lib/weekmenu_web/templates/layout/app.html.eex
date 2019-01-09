@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body class="bg-grey-lightest text-black">
-    <nav class="border-t-4 border-orange flex items-baseline justify-between flex-wrap bg-white p-6 shadow">
+    <nav class="border-t border-orange flex items-baseline justify-between flex-wrap bg-white p-6 shadow">
       <div class="container flex items-baseline">
         <div class="text-orange w-1/4 float-left">
           <span class="font-semibold text-xl tracking-tight">WeekMenu</span>
