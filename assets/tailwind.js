@@ -46,87 +46,29 @@ let defaultConfig = require('tailwindcss/defaultConfig')()
 let colors = {
   'transparent': 'transparent',
 
-  'black': '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  'white': '#ffffff',
+  'black': 'HSL(0, 0%, 13%)',
+  'white': 'HSL(104, 100%, 100%)',
 
-  'red-darkest': '#3b0d0c',
-  'red-darker': '#621b18',
-  'red-dark': '#cc1f1a',
-  'red': '#e3342f',
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
+  'grey-darkest': 'hsl(0, 0%, 23%)',
+  'grey-darker': 'hsl(0, 0%, 38%)',
+  'grey-dark': 'hsl(0, 0%, 49%)',
+  'grey': 'hsl(0, 0%, 62%)',
+  'grey-light': 'hsl(0, 0%, 69%)',
+  'grey-lighter': 'hsl(0, 0%, 88%)',
+  'grey-lightest': 'hsl(0, 0%, 97%)',
 
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  'orange': '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
+  'orange': 'hsl(22, 78%, 55%)',
+  'orange-lightest': 'hsl(22, 100%, 95%)',
 
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
+  'blue-darkest': 'HSL(206, 48%, 23%)',
+  'blue-darker': 'HSL(207, 70%, 27%)',
+  'blue-dark': 'HSL(206, 73%, 37%)',
+  'blue': 'HSL(206, 68%, 48%)',
+  'blue-light': 'HSL(207, 64%, 62%)',
+  'blue-lighter': 'HSL(206, 84%, 81%)',
+  'blue-lightest': 'HSL(205, 100%, 97%)',
 
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
-  'green': '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#20504f',
-  'teal-dark': '#38a89d',
-  'teal': '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
-  'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  'indigo': '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
+  'red': 'HSL(353, 85%, 50%)',
 }
 
 module.exports = {
@@ -189,7 +131,6 @@ module.exports = {
   | provided by the platform.
   |
   | Class name: .font-{name}
-  | CSS property: font-family
   |
   */
 
@@ -227,7 +168,7 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
-    ],
+    ]
   },
 
 
@@ -247,7 +188,6 @@ module.exports = {
   | prefer, be it rems, ems, pixels or other.
   |
   | Class name: .text-{size}
-  | CSS property: font-size
   |
   */
 
@@ -275,7 +215,6 @@ module.exports = {
   | all of these, so we recommend removing those you don't need.
   |
   | Class name: .font-{weight}
-  | CSS property: font-weight
   |
   */
 
@@ -301,7 +240,6 @@ module.exports = {
   | them in Tailwind, leadings.
   |
   | Class name: .leading-{size}
-  | CSS property: line-height
   |
   */
 
@@ -322,7 +260,6 @@ module.exports = {
   | them in Tailwind, tracking.
   |
   | Class name: .tracking-{size}
-  | CSS property: letter-spacing
   |
   */
 
@@ -343,7 +280,6 @@ module.exports = {
   | independently if that makes sense for your project.
   |
   | Class name: .text-{color}
-  | CSS property: color
   |
   */
 
@@ -360,7 +296,6 @@ module.exports = {
   | these independently if that makes sense for your project.
   |
   | Class name: .bg-{color}
-  | CSS property: background-color
   |
   */
 
@@ -377,7 +312,6 @@ module.exports = {
   | that are specific to your project here as well.
   |
   | Class name: .bg-{size}
-  | CSS property: background-size
   |
   */
 
@@ -398,7 +332,6 @@ module.exports = {
   | width that will be used when you do not specify a border width.
   |
   | Class name: .border{-side?}{-width?}
-  | CSS property: border-width
   |
   */
 
@@ -425,7 +358,6 @@ module.exports = {
   | specify a border color.
   |
   | Class name: .border-{color}
-  | CSS property: border-color
   |
   */
 
@@ -445,7 +377,6 @@ module.exports = {
   | a good idea to put it first so other values are able to override it.
   |
   | Class name: .rounded{-side?}{-size?}
-  | CSS property: border-radius
   |
   */
 
@@ -475,7 +406,6 @@ module.exports = {
   | awesome classes like .w-2/3.
   |
   | Class name: .w-{size}
-  | CSS property: width
   |
   */
 
@@ -508,7 +438,7 @@ module.exports = {
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     'full': '100%',
-    'screen': '100vw',
+    'screen': '100vw'
   },
 
 
@@ -524,7 +454,6 @@ module.exports = {
   | needed.
   |
   | Class name: .h-{size}
-  | CSS property: height
   |
   */
 
@@ -546,7 +475,7 @@ module.exports = {
     '48': '12rem',
     '64': '16rem',
     'full': '100%',
-    'screen': '100vh',
+    'screen': '100vh'
   },
 
 
@@ -561,7 +490,6 @@ module.exports = {
   | these values as needed.
   |
   | Class name: .min-w-{size}
-  | CSS property: min-width
   |
   */
 
@@ -582,14 +510,13 @@ module.exports = {
   | values as needed.
   |
   | Class name: .min-h-{size}
-  | CSS property: min-height
   |
   */
 
   minHeight: {
     '0': '0',
     'full': '100%',
-    'screen': '100vh',
+    'screen': '100vh'
   },
 
 
@@ -605,7 +532,6 @@ module.exports = {
   | modify these values as needed.
   |
   | Class name: .max-w-{size}
-  | CSS property: max-width
   |
   */
 
@@ -634,7 +560,6 @@ module.exports = {
   | these values as needed.
   |
   | Class name: .max-h-{size}
-  | CSS property: max-height
   |
   */
 
@@ -656,7 +581,6 @@ module.exports = {
   | values as needed.
   |
   | Class name: .p{side?}-{size}
-  | CSS property: padding
   |
   */
 
@@ -691,7 +615,6 @@ module.exports = {
   | values as needed.
   |
   | Class name: .m{side?}-{size}
-  | CSS property: margin
   |
   */
 
@@ -727,7 +650,6 @@ module.exports = {
   | values as needed.
   |
   | Class name: .-m{side?}-{size}
-  | CSS property: margin
   |
   */
 
@@ -763,7 +685,6 @@ module.exports = {
   | suffixed `.shadow` utility.
   |
   | Class name: .shadow-{size?}
-  | CSS property: box-shadow
   |
   */
 
@@ -787,7 +708,6 @@ module.exports = {
   | values as needed.
   |
   | Class name: .z-{index}
-  | CSS property: z-index
   |
   */
 
@@ -812,7 +732,6 @@ module.exports = {
   | values as needed.
   |
   | Class name: .opacity-{name}
-  | CSS property: opacity
   |
   */
 
@@ -836,7 +755,6 @@ module.exports = {
   | generated CSS file size down.
   |
   | Class name: .fill-{name}
-  | CSS property: fill
   |
   */
 
@@ -856,7 +774,6 @@ module.exports = {
   | keep the generated CSS file size down.
   |
   | Class name: .stroke-{name}
-  | CSS property: stroke
   |
   */
 
@@ -877,7 +794,6 @@ module.exports = {
   |   - responsive
   |   - hover
   |   - focus
-  |   - focus-within
   |   - active
   |   - group-hover
   |
@@ -912,8 +828,6 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    objectFit: false,
-    objectPosition: false,
     opacity: ['responsive'],
     outline: ['focus'],
     overflow: ['responsive'],
@@ -955,7 +869,7 @@ module.exports = {
 
   plugins: [
     require('tailwindcss/plugins/container')({
-      // center: true,
+      center: true,
       // padding: '1rem',
     }),
   ],
