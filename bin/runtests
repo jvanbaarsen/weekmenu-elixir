@@ -2,5 +2,6 @@
 
 set -e
 
+mix credo
 mix format --check-formatted
 mix test
