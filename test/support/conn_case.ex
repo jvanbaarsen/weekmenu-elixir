@@ -21,6 +21,8 @@ defmodule WeekmenuWeb.ConnCase do
       use Phoenix.ConnTest
       alias WeekmenuWeb.Router.Helpers, as: Routes
 
+      import Weekmenu.Factory
+
       # The default endpoint for testing
       @endpoint WeekmenuWeb.Endpoint
     end
