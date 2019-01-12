@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+
+mix format --check-formatted
+mix test

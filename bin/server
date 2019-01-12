@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# script/server: Boot the Phoenix server.
+
+set -e
+
+cat <<"EOF"
+* * * * * * * * * * * * * * * * * * * * * *
+*         Starting Weekmenu               *
+* * * * * * * * * * * * * * * * * * * * * *
+EOF
+
+iex -S mix phx.server
