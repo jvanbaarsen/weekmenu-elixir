@@ -52,6 +52,3 @@ jobs:
 
       - run: mix format --check-formatted
       - run: mix test
-
-      - store_test_results:
-          path: _build/test/lib/weekmenu
