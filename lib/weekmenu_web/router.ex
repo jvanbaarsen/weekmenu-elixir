@@ -16,7 +16,8 @@ defmodule WeekmenuWeb.Router do
   scope "/", WeekmenuWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", RecipeController, :index
+    resources "/recipes", RecipeController
   end
 
   # Other scopes may use custom stacks.

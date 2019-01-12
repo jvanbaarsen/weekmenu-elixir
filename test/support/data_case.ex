@@ -21,6 +21,7 @@ defmodule Weekmenu.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
+      import Weekmenu.Factory
       import Weekmenu.DataCase
     end
   end
