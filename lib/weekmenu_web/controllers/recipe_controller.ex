@@ -1,7 +1,6 @@
 defmodule WeekmenuWeb.RecipeController do
   use WeekmenuWeb, :controller
 
-  alias Weekmenu.Schemas.Recipe
   alias Weekmenu.Recipes
 
   def index(conn, _params) do
