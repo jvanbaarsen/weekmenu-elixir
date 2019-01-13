@@ -18,6 +18,8 @@ defmodule Weekmenu.DataCase do
     quote do
       alias Weekmenu.Repo
 
+      use Timex
+
       import Ecto
       import Ecto.Changeset
       import Ecto.Query

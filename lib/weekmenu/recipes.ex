@@ -4,6 +4,13 @@ defmodule Weekmenu.Recipes do
   alias Weekmenu.Schemas.Recipe
 
   def list_recipes do
-    Repo.all(Recipe)
+    Recipe
+    |> ordered
+    |> Repo.all()
+  end
+
+  defp ordered(query) do
+    query
+    |> order_by(desc: :inserted_at)
   end
 end
