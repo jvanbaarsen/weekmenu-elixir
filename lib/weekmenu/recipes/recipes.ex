@@ -1,7 +1,7 @@
 defmodule Weekmenu.Recipes do
   import Ecto.Query, warn: false
   alias Weekmenu.Repo
-  alias Weekmenu.Schemas.Recipe
+  alias Weekmenu.Recipes.Recipe
 
   def list_recipes do
     Recipe

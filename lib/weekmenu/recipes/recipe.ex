@@ -1,4 +1,4 @@
-defmodule Weekmenu.Schemas.Recipe do
+defmodule Weekmenu.Recipes.Recipe do
   use Ecto.Schema
   import Ecto.Changeset
 
