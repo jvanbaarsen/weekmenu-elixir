@@ -17,6 +17,8 @@ defmodule WeekmenuWeb.Router do
     pipe_through :browser
 
     get "/", RecipeController, :index
+    get "/signup", UserController, :new
+    post "/signup", UserController, :create
     resources "/recipes", RecipeController
   end
 

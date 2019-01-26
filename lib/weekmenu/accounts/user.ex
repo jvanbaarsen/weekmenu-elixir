@@ -2,6 +2,7 @@ defmodule Weekmenu.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Comeonin.Bcrypt
+  alias Ecto.Changeset
 
   schema "users" do
     field :email, :string
@@ -14,25 +15,25 @@ defmodule Weekmenu.Accounts.User do
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email])
+    |> cast(attrs, [:name, :email, :password])
     |> validate_required([:name, :email])
+    |> unique_constraint(:email)
+    |> encrypt_password
   end
 
   def signup_changeset(user, attrs) do
     user
     |> changeset(attrs)
-    |> cast(attrs, [:password])
     |> validate_required([:password])
-    |> encrypt_password
-    |> unique_constraint(:email)
   end
 
   defp encrypt_password(changeset) do
-    password =
-      changeset
-      |> get_field(:password)
-      |> Bcrypt.hashpwsalt()
+    case changeset do
+      %Changeset{valid?: true, changes: %{password: password}} ->
+        put_change(changeset, :encrypted_password, Bcrypt.hashpwsalt(password))
 
-    put_change(changeset, :encrypted_password, password)
+      _ ->
+        changeset
+    end
   end
 end
