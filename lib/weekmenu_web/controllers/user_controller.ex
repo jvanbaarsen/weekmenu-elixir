@@ -11,7 +11,7 @@ defmodule WeekmenuWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     case Accounts.create(user_params) do
-      {:ok, user} ->
+      {:ok, _} ->
         conn
         |> put_flash(:info, "Signup was successfull")
         |> redirect(to: Routes.recipe_path(conn, :index))
