@@ -57,18 +57,17 @@ let colors = {
   'grey-lighter': 'hsl(0, 0%, 88%)',
   'grey-lightest': 'hsl(0, 0%, 97%)',
 
+  // Brand
   'orange': 'hsl(22, 78%, 55%)',
   'orange-lightest': 'hsl(22, 100%, 95%)',
 
-  'blue-darkest': 'HSL(206, 48%, 23%)',
-  'blue-darker': 'HSL(207, 70%, 27%)',
-  'blue-dark': 'HSL(206, 73%, 37%)',
-  'blue': 'HSL(206, 68%, 48%)',
-  'blue-light': 'HSL(207, 64%, 62%)',
-  'blue-lighter': 'HSL(206, 84%, 81%)',
-  'blue-lightest': 'HSL(205, 100%, 97%)',
+  // Greens
+  'green-darkest': 'hsl(81, 78%, 21%)',
+  'green': 'hsl(83, 70%, 34%)',
+  'green-lightest': 'hsl(83, 88%, 94%)',
 
-  'red': 'HSL(353, 85%, 50%)',
+  // Reds
+  'red': 'hsl(360, 67%, 44%)'
 }
 
 module.exports = {
