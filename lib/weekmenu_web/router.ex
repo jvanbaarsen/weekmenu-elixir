@@ -22,8 +22,15 @@ defmodule WeekmenuWeb.Router do
     resources "/recipes", RecipeController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", WeekmenuWeb do
-  #   pipe_through :api
-  # end
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: WeekmenuWeb.Schema,
+      json_codec: Jason,
+      socket: WeekmenuWeb.UserSocket,
+      default_url: "/api"
+
+    forward "/", Absinthe.Plug, schema: WeekmenuWeb.Schema, json_codec: Jason
+  end
 end

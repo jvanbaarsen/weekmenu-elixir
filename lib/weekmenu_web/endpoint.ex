@@ -1,5 +1,6 @@
 defmodule WeekmenuWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :weekmenu
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", WeekmenuWeb.UserSocket,
     websocket: true,
@@ -13,7 +14,7 @@ defmodule WeekmenuWeb.Endpoint do
     at: "/",
     from: :weekmenu,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt absinthe_graphiql)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
