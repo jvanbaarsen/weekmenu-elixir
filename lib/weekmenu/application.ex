@@ -11,9 +11,13 @@ defmodule Weekmenu.Application do
       # Start the Ecto repository
       Weekmenu.Repo,
       # Start the endpoint when the application starts
-      WeekmenuWeb.Endpoint
+      WeekmenuWeb.Endpoint,
       # Starts a worker by calling: Weekmenu.Worker.start_link(arg)
       # {Weekmenu.Worker, arg},
+      %{
+        id: Absinthe.Subscription,
+        start: {Absinthe.Subscription, :start_link, [WeekmenuWeb.Endpoint]}
+      }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
