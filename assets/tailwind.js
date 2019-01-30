@@ -67,7 +67,9 @@ let colors = {
   'green-lightest': 'hsl(83, 88%, 94%)',
 
   // Reds
-  'red': 'hsl(360, 67%, 44%)'
+  'red-darkest': 'hsl(360, 85%, 25%)',
+  'red': 'hsl(360, 67%, 44%)',
+  'red-lightest': 'hsl(360, 100%, 97%)'
 }
 
 module.exports = {
