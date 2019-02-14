@@ -41,6 +41,7 @@ defmodule WeekmenuWeb do
 
       import WeekmenuWeb.ErrorHelpers
       import WeekmenuWeb.Gettext
+      import WeekmenuWeb.Router.Helpers
       alias WeekmenuWeb.Router.Helpers, as: Routes
     end
   end
@@ -50,6 +51,12 @@ defmodule WeekmenuWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+
+      import WeekmenuWeb.Auth,
+        only: [
+          fetch_current_user_by_session: 2,
+          redirect_unless_signed_in: 2
+        ]
     end
   end
 

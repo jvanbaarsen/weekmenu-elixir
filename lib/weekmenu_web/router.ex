@@ -1,12 +1,18 @@
 defmodule WeekmenuWeb.Router do
   use WeekmenuWeb, :router
 
-  pipeline :browser do
+  pipeline :anonymous_browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_user_by_session
+  end
+
+  pipeline :authenticated_browser do
+    plug :anonymous_browser
+    plug :redirect_unless_signed_in
   end
 
   pipeline :api do
@@ -14,11 +20,17 @@ defmodule WeekmenuWeb.Router do
   end
 
   scope "/", WeekmenuWeb do
-    pipe_through :browser
+    pipe_through :anonymous_browser
 
-    get "/", RecipeController, :index
     get "/signup", UserController, :new
     post "/signup", UserController, :create
+    get "/signin", SessionController, :new
+    post "/signin", SessionController, :create
+  end
+
+  scope "/", WeekmenuWeb do
+    pipe_through :authenticated_browser
+    get "/", RecipeController, :index
     resources "/recipes", RecipeController
   end
 

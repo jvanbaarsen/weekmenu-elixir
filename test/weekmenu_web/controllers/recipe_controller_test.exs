@@ -1,7 +1,8 @@
 defmodule WeekmenuWeb.RecipeControllerTest do
   use WeekmenuWeb.ConnCase
 
-  describe "index" do
+  describe ".index" do
+    @tag :as_user
     test "lists all recipes", %{conn: conn} do
       recipes = insert_list(5, :recipe)
       conn = get(conn, Routes.recipe_path(conn, :index))

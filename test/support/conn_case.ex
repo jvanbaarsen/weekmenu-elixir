@@ -35,6 +35,17 @@ defmodule WeekmenuWeb.ConnCase do
       Ecto.Adapters.SQL.Sandbox.mode(Weekmenu.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    user =
+      if tags[:as_user] do
+        Weekmenu.Factory.insert(:user)
+      else
+        nil
+      end
+
+    conn =
+      Phoenix.ConnTest.build_conn()
+      |> Plug.Conn.assign(:current_user, user)
+
+    {:ok, conn: conn, user: user}
   end
 end

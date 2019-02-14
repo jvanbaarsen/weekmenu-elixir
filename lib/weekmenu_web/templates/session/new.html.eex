@@ -1,16 +1,11 @@
 <div class="container mx-auto">
   <div class="card p-8 w-1/2 mx-auto">
-    <h1 class="font-bold text-xl mb-4">Signup</h1>
+    <%= if get_flash(@conn, :error) do %>
+      <div class="px-4 py-4 bg-red-lightest border-b-2 border-red text-red text-center font-bold -mx-8 -mt-8 mb-8"><%= get_flash(@conn, :error) %></div>
+    <% end %>
 
-    <%= form_for @changeset, Routes.user_path(@conn, :create), fn f -> %>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <%= label f, :name, class: "input-label" %>
-          <%= text_input f, :name, class: "input-field" %>
-          <%= error_tag f, :name, class: "form-errors" %>
-        </div>
-      </div>
-
+    <h1 class="font-bold text-xl mb-4">Sign in to Weekmenu</h1>
+    <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
           <%= label f, :email, class: "input-label" %>
@@ -28,7 +23,7 @@
       </div>
 
       <div class="flex items-center justify-between">
-        <%= submit "Signup", class: "btn" %>
+        <%= submit "Sign in", class: "btn" %>
       </div>
     <% end %>
   </div>

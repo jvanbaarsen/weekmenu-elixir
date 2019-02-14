@@ -24,4 +24,20 @@ defmodule Weekmenu.AccountsTest do
       assert {:error, %Ecto.Changeset{}} = Accounts.create(invalid_attrs)
     end
   end
+
+  describe "find_user_by_id/1" do
+    test "returns an ok tuple when user is found" do
+      user = insert(:user)
+
+      result = Accounts.find_user_by_id(user.id)
+
+      assert result == {:ok, user}
+    end
+
+    test "returns an error tuple when user is not found" do
+      result = Accounts.find_user_by_id(9999)
+
+      assert result == {:error, "user not found"}
+    end
+  end
 end
