@@ -54,7 +54,8 @@ defmodule WeekmenuWeb do
 
       import WeekmenuWeb.Auth,
         only: [
-          fetch_current_user_by_session: 2
+          fetch_current_user_by_session: 2,
+          redirect_unless_signed_in: 2
         ]
     end
   end

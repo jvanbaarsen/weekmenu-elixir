@@ -76,4 +76,24 @@ defmodule WeekmenuWeb.AuthTest do
       assert is_nil(conn.assigns.current_user)
     end
   end
+
+  describe ".redirect_unless_signed_in/1" do
+    test "redirects to new session path when user is not signed in", %{conn: conn} do
+      conn = Auth.redirect_unless_signed_in(conn)
+
+      assert !is_nil(conn.status)
+      assert redirected_to(conn, 302) =~ "/signin"
+    end
+
+    test "does not redirect when user is signed in", %{conn: conn} do
+      user = insert(:user)
+
+      conn =
+        conn
+        |> Auth.sign_in(user)
+        |> Auth.redirect_unless_signed_in()
+
+      assert is_nil(conn.status)
+    end
+  end
 end

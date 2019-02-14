@@ -4,10 +4,13 @@ defmodule WeekmenuWeb.Auth do
   """
 
   import Plug.Conn
+  import Phoenix.Controller
 
   alias Weekmenu.Repo
   alias Weekmenu.Accounts
   alias Weekmenu.Accounts.User
+
+  alias WeekmenuWeb.Router.Helpers
 
   def fetch_current_user_by_session(conn, _opts \\ []) do
     user_id = get_session(conn, :user_id)
@@ -21,6 +24,16 @@ defmodule WeekmenuWeb.Auth do
       end
     else
       delete_current_user(conn)
+    end
+  end
+
+  def redirect_unless_signed_in(conn, _opts \\ []) do
+    if conn.assigns[:current_user] do
+      conn
+    else
+      conn
+      |> redirect(to: Helpers.session_path(conn, :new))
+      |> halt()
     end
   end
 

@@ -7,8 +7,12 @@ defmodule WeekmenuWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-
     plug :fetch_current_user_by_session
+  end
+
+  pipeline :authenticated_browser do
+    plug :anonymous_browser
+    plug :redirect_unless_signed_in
   end
 
   pipeline :api do

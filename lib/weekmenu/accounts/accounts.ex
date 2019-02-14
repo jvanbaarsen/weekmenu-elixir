@@ -11,7 +11,7 @@ defmodule Weekmenu.Accounts do
   end
 
   def find_user_by_id(id) do
-    if(user = Repo.get_by(User, id: id)) do
+    if user = Repo.get_by(User, id: id) do
       {:ok, user}
     else
       {:error, "user not found"}
