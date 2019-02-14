@@ -69,7 +69,6 @@ defmodule WeekmenuWeb.AuthTest do
     test "clears assignment when user cannot be found", %{conn: conn} do
       conn =
         conn
-        |> assign(:current_user, "SomeId")
         |> put_session(:user_id, 9999)
         |> Auth.fetch_current_user_by_session()
 

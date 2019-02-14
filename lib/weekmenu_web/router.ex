@@ -22,12 +22,15 @@ defmodule WeekmenuWeb.Router do
   scope "/", WeekmenuWeb do
     pipe_through :anonymous_browser
 
-    get "/", RecipeController, :index
     get "/signup", UserController, :new
     post "/signup", UserController, :create
     get "/signin", SessionController, :new
     post "/signin", SessionController, :create
+  end
 
+  scope "/", WeekmenuWeb do
+    pipe_through :authenticated_browser
+    get "/", RecipeController, :index
     resources "/recipes", RecipeController
   end
 

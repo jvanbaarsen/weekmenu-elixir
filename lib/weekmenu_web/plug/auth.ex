@@ -13,17 +13,20 @@ defmodule WeekmenuWeb.Auth do
   alias WeekmenuWeb.Router.Helpers
 
   def fetch_current_user_by_session(conn, _opts \\ []) do
-    user_id = get_session(conn, :user_id)
-
-    if user_id do
-      with {:ok, user} <- Accounts.find_user_by_id(user_id) do
+    cond do
+      user = conn.assigns[:current_user] ->
         sign_in(conn, user)
-      else
-        _ ->
-          delete_current_user(conn)
-      end
-    else
-      delete_current_user(conn)
+
+      user_id = get_session(conn, :user_id) ->
+        with {:ok, user} <- Accounts.find_user_by_id(user_id) do
+          sign_in(conn, user)
+        else
+          _ ->
+            delete_current_user(conn)
+        end
+
+      true ->
+        delete_current_user(conn)
     end
   end
 
