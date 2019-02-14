@@ -6,16 +6,22 @@ defmodule WeekmenuWeb.Auth do
   import Plug.Conn
 
   alias Weekmenu.Repo
+  alias Weekmenu.Accounts
   alias Weekmenu.Accounts.User
 
-  def fetch_current_user_by_session(conn, _opts) do
-    # user_id = get_session(conn, :user_id)
-    # user = Repo.get_by(User, id: user_id)
+  def fetch_current_user_by_session(conn, _opts \\ []) do
+    user_id = get_session(conn, :user_id)
 
-    # # TODO Add proper check if user_id is valid
-    # conn
-    # |> put_current_user(user)
-    conn
+    if user_id do
+      with {:ok, user} <- Accounts.find_user_by_id(user_id) do
+        sign_in(conn, user)
+      else
+        _ ->
+          delete_current_user(conn)
+      end
+    else
+      delete_current_user(conn)
+    end
   end
 
   def sign_in(conn, user) do
@@ -38,5 +44,9 @@ defmodule WeekmenuWeb.Auth do
   defp put_current_user(conn, user) do
     conn
     |> assign(:current_user, user)
+  end
+
+  defp delete_current_user(conn) do
+    assign(conn, :current_user, nil)
   end
 end

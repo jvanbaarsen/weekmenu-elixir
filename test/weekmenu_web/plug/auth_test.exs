@@ -53,4 +53,27 @@ defmodule WeekmenuWeb.AuthTest do
       assert response == :error
     end
   end
+
+  describe ".fetch_current_user_by_session/2" do
+    test "assigns 'current_user' if the user exists", %{conn: conn} do
+      user = insert(:user)
+
+      conn =
+        conn
+        |> put_session(:user_id, user.id)
+        |> Auth.fetch_current_user_by_session()
+
+      assert conn.assigns.current_user == user
+    end
+
+    test "clears assignment when user cannot be found", %{conn: conn} do
+      conn =
+        conn
+        |> assign(:current_user, "SomeId")
+        |> put_session(:user_id, 9999)
+        |> Auth.fetch_current_user_by_session()
+
+      assert is_nil(conn.assigns.current_user)
+    end
+  end
 end
