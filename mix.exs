@@ -45,7 +45,7 @@ defmodule Weekmenu.MixProject do
       {:gettext, "~> 0.11"},
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
       {:timex, "~> 3.1"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.1"},
