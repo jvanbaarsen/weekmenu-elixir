@@ -32,6 +32,9 @@ command -v psql >/dev/null 2>&1 || {
   exit 1;
 }
 
+# Copy development secrets config
+cp -n config/secrets_template.exs config/dev.secret.exs
+
 # Install dependencies
 echo "==> Installing Elixir dependencies"
 mix deps.get

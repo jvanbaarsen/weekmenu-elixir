@@ -72,3 +72,10 @@ config :logger, level: :info
 #
 # Note you can't rely on `System.get_env/1` when using releases.
 # See the releases documentation accordingly.
+
+config :appsignal, :config, active: true
+
+config :appsignal, :config,
+  name: "weekmenu",
+  push_api_key: System.get_env("APPSIGNAL_PUSH_API_KEY"),
+  env: Mix.env()

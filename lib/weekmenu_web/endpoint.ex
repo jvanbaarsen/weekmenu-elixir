@@ -1,6 +1,7 @@
 defmodule WeekmenuWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :weekmenu
   use Absinthe.Phoenix.Endpoint
+  use Appsignal.Phoenix
 
   socket "/socket", WeekmenuWeb.UserSocket,
     websocket: [timeout: 45_000],

@@ -51,7 +51,8 @@ defmodule Weekmenu.MixProject do
       {:bcrypt_elixir, "~> 1.1"},
       {:absinthe, "~> 1.4.13"},
       {:absinthe_plug, "~> 1.4.6"},
-      {:absinthe_phoenix, "~> 1.4.0"}
+      {:absinthe_phoenix, "~> 1.4.0"},
+      {:appsignal, "~> 1.9"}
     ]
   end
 

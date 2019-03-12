@@ -73,3 +73,7 @@ config :weekmenu, Weekmenu.Repo,
   database: "weekmenu_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "dev.secret.exs"
+
+config :appsignal, :config, active: true
