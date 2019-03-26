@@ -1,5 +1,5 @@
 <div class="container mx-auto">
-  <div class="card p-8 w-1/2 mx-auto">
+  <div class="card p-8 w-full lg:w-1/2 mx-auto">
     <%= if get_flash(@conn, :error) do %>
       <div class="px-4 py-4 bg-red-lightest border-b-2 border-red text-red text-center font-bold -mx-8 -mt-8 mb-8"><%= get_flash(@conn, :error) %></div>
     <% end %>
@@ -24,6 +24,7 @@
 
       <div class="flex items-center justify-between">
         <%= submit "Sign in", class: "btn" %>
+        <%= link gettext("Create free account"), to: user_path(@conn, :new) %>
       </div>
     <% end %>
   </div>
