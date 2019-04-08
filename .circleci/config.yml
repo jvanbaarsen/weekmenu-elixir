@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/elixir:1.7.1
+      - image: circleci/elixir:1.7.1-node-browsers
       - image: circleci/postgres:10.3
 
     environment:
@@ -16,6 +16,10 @@ jobs:
       - restore_cache:
           keys:
             - elixir-build-v3-{{ checksum "mix.lock" }}
+      - run:
+          name: Start Chromedriver
+          command: chromedriver
+          background: true
       - run:
           name: "Install Hex"
           command: mix local.hex --force
