@@ -31,7 +31,7 @@ defmodule WeekmenuWeb.Router do
   scope "/", WeekmenuWeb do
     pipe_through :authenticated_browser
     get "/", RecipeController, :index
-    resources "/recipes", RecipeController
+    resources "/recipes", RecipeController, only: [:index, :new, :create]
   end
 
   scope "/api" do

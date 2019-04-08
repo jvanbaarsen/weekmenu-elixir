@@ -9,6 +9,12 @@ defmodule Weekmenu.Recipes do
     |> Repo.all()
   end
 
+  def create(attrs) do
+    %Recipe{}
+    |> Recipe.changeset(attrs)
+    |> Repo.insert()
+  end
+
   defp ordered(query) do
     query
     |> order_by(desc: :inserted_at)

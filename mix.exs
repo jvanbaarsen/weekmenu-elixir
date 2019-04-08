@@ -52,7 +52,8 @@ defmodule Weekmenu.MixProject do
       {:absinthe, "~> 1.4.13"},
       {:absinthe_plug, "~> 1.4.6"},
       {:absinthe_phoenix, "~> 1.4.0"},
-      {:appsignal, "~> 1.9"}
+      {:appsignal, "~> 1.9"},
+      {:hound, "~> 1.0", only: [:test]}
     ]
   end
 
