@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -7,16 +7,18 @@
     <title>Weekmenu · Phoenix Framework</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
-  <body class="bg-grey-lightest text-black">
-    <nav class="border-t border-orange flex items-baseline justify-between flex-wrap bg-white p-6 shadow">
-      <div class="container flex items-baseline">
-        <div class="text-orange w-1/4 float-left">
-          <span class="font-semibold text-xl tracking-tight">WeekMenu</span>
+  <body class="bg-gray-100 text-black m-0 font-sans">
+    <nav class="border-t-4 border-orange-500 flex items-baseline justify-between flex-wrap bg-white p-6 shadow">
+      <div class="container flex items-baseline mx-auto">
+        <div class="text-orange-500 w-full text-center">
+          <%= link to: recipe_path(@conn, :index) do %>
+            <span class="font-semibold text-xl">WeekMenu</span>
+          <% end %>
         </div>
       </div>
     </nav>
 
-    <div class="container py-6">
+    <div class="container py-6 mx-auto">
       <%= render @view_module, @view_template, assigns %>
     </div>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>

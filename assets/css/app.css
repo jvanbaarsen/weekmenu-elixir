@@ -1,33 +1,51 @@
-@tailwind preflight;
+@tailwind base;
 @tailwind components;
 
 .input-label {
-  @apply .block .uppercase .tracking-wide .text-grey-darker .text-xs .font-bold .mb-2;
+  @apply .block .uppercase .tracking-wide .text-gray-600 .text-xs .font-bold .mb-2
 }
 
 .input-field {
-  @apply .appearance-none .block .w-full .text-grey-darker
-    .border-2 .border-grey-lighter .rounded .py-2 .px-3
+  @apply .appearance-none .block .w-full .text-gray-600
+    .border-2 .border-gray-300 .rounded .py-2 .px-3
 }
 
 .input-field:focus {
-  @apply .outline-none .bg-white .border-grey-light
+  @apply .outline-none .bg-white .border-gray-400
 }
 
 .form-errors {
-  @apply .mt-2 .text-sm .text-red .font-bold;
+  @apply .mt-2 .text-sm .text-red-500 .font-bold
 }
 
 .card {
-  @apply .bg-white .shadow .rounded m-3
+  @apply .bg-white .shadow .m-3
+}
+
+@screen lg {
+  .card {
+    @apply .rounded
+  }
 }
 
 .btn {
-  @apply .bg-green .text-white .font-bold .py-2 .px-4 .rounded
+  @apply .bg-green-500 .text-white .font-bold .py-2 .px-4 .rounded
 }
 
 .btn:hover {
-  @apply .bg-green-darkest
+  @apply .bg-green-600
+}
+
+.title {
+  @apply  .text-xl .mb-4
+}
+
+.link {
+  @apply .text-orange-600
+}
+
+.link:hover {
+  @apply .underline
 }
 
 @tailwind utilities;
